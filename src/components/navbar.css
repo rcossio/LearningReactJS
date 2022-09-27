@@ -1,9 +1,22 @@
 .navbar {
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-body {
+    display:flex;
+    flex-direction: row;
     align-content: flex-end;
     align-items: center;
     margin: 0 1rem;
+}
+
+.brandname {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
 }
 
 .navbar-list {

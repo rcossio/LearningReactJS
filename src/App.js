@@ -5,8 +5,8 @@ import ItemListContainer from "./components/itemlistcontainer"
 function App() {
   return (
     <Fragment>
-      < Header />
-      < ItemListContainer text='This is the ItemList container' />
+      < Header /> {/* Ver NavBar adentro del header */}
+      < ItemListContainer text='This is the ItemList container with text passed as a prop, try passing a different text...' />
     </Fragment>
   )
 }

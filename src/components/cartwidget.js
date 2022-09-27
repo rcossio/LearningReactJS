@@ -3,9 +3,11 @@ import cart from "./cart.svg";
 
 const CartWidget = () => {
     return(
-        <picture className="cart-div">
+        <picture className="cart-container">
             <img className={"cart"} src={cart} alt={"CartWidget"}/>
-            <span className="counter">3</span>
+            <div className="counter-container">
+                <span className="counter">3</span>
+            </div>
         </picture>
     )
 }
