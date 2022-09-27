@@ -1,0 +1,27 @@
+.navbar {
+    display:flex;
+    flex-direction: row;
+    align-content: flex-end;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0.5 0;
+}
+
+.navbar-list-item {
+    margin: 0 0.5rem;
+    padding: 1rem;
+    transition-duration:0.2s ;
+    border-radius: 5%;
+}
+
+.navbar-list-item:hover {
+    transition-duration:0.2s ;
+    box-shadow: 3px 3px 10px rgb(58, 97, 99);
+
+}

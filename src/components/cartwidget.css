@@ -1,0 +1,16 @@
+.cart-div {
+    position: relative;    
+}
+
+.cart {
+    width: 2rem;
+    margin: 0.5rem;
+}
+
+.counter{
+    font-weight: 600;
+    font-size: small;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+}
