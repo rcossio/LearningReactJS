@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
-import Header from './components/Header';
-import ItemListContainer from "./components/Itemlistcontainer"
+import Counter from './components/Counter/Counter';
+import Header from './components/Header/Header';
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 
 function App() {
   return (
     <Fragment>
-      < Header /> {/* Ver NavBar adentro del header */}
-      < ItemListContainer text='This is the ItemList container with text passed as a prop, try passing a different text...' />
+      <Header/>
+      <ItemListContainer text='This is the ItemList container with text passed as a prop, try passing a different text...' />
+      <Counter onAdd={() => {console.log("running function onAdd")}}/>
     </Fragment>
   )
 }

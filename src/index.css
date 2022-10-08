@@ -97,3 +97,53 @@
     margin: 1rem; 
     border-radius: 5%;
 } 
+
+/* About the Counter*/
+.item-counter-w-button {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.item-counter-w-button--addToCartButton {
+    width: 7rem;
+    height: calc(1.5rem + 6px) ;
+    border-radius: 5px;
+    background-color: cadetblue;
+    border: 0;
+    margin-left: 5px;
+    transition-duration:0.2s ;
+}
+
+.item-counter-w-button--addToCartButton:hover {
+    transition-duration:0.1s ;
+    box-shadow: 1px 1px 4px rgb(58, 97, 99);
+}
+
+.item-counter {
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid rgb(139, 139, 139);
+}
+
+.item-counter--number {
+    width: 3rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-counter--button {
+    width: 2rem;
+    height: 1.5rem;
+    border-radius: 10%;
+    background-color: cadetblue;
+    border: 0;
+}
