@@ -7,7 +7,7 @@ function App() {
   return (
     <Fragment>
       <Header/>
-      <ItemListContainer text='This is the ItemList container with text passed as a prop, try passing a different text...' />
+      <ItemListContainer />
       <Counter onAdd={() => {console.log("running function onAdd")}}/>
     </Fragment>
   )
