@@ -1,4 +1,4 @@
-import "./cartwidget.css";
+import "../index.css";
 import cart from "./cart.svg";
 
 const CartWidget = () => {

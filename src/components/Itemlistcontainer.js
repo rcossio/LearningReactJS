@@ -1,4 +1,4 @@
-import "./itemlistcontainer.css";
+import "../index.css";
 
 const ItemListContainer = ({text}) => {
     return(

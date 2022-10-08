@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import Header from './components/header';
-import ItemListContainer from "./components/itemlistcontainer"
+import Header from './components/Header';
+import ItemListContainer from "./components/Itemlistcontainer"
 
 function App() {
   return (
