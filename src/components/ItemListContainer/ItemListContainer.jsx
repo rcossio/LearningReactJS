@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../index.css";
-import ItemList from "../ItemList/ItemList.js"
-import getProducts from "../../backendMock";
+import ItemList from "../ItemList/ItemList.jsx"
+import getProducts from "../../backendMock.js";
 
 
 
@@ -12,7 +12,7 @@ const ItemListContainer = () => {
 
 
     useEffect(
-        ()=>{
+        () => {
             getProducts().then(
                 (products) => {
                     setProducts(products)
@@ -24,8 +24,9 @@ const ItemListContainer = () => {
 
     return(
         <div className="item-list-container">
-            {loading? <h2 className="loading-sign">Loading products...</h2>:null}
-            <ItemList list={products}/>
+            {loading? 
+            <h2 className="loading-sign">Loading products...</h2>
+            :<ItemList list={products}/>}
         </div>
     )
 }

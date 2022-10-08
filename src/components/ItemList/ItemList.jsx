@@ -1,5 +1,5 @@
 import "../../index.css";
-import Item from "../Item/Item.js"
+import Item from "../Item/Item.jsx"
 
 
 const ItemList = ({list}) => {

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Counter from './components/Counter/Counter';
 import Header from './components/Header/Header';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Fragment>
       <Header/>
       <ItemListContainer />
+      <ItemDetailContainer id="MLA929370841"/>
       <Counter onAdd={() => {console.log("running function onAdd")}}/>
     </Fragment>
   )
