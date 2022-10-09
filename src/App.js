@@ -1,17 +1,22 @@
-import React, { Fragment } from 'react';
-import Counter from './components/Counter/Counter';
+import "./index.css";
+import React from 'react';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import {BrowserRouter,Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <Fragment>
+    <BrowserRouter>
       <Header/>
-      <ItemListContainer />
-      <ItemDetailContainer id="MLA929370841"/>
-      <Counter onAdd={() => {console.log("running function onAdd")}}/>
-    </Fragment>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />}/>
+        <Route path="/category/:categoryName" element={<ItemListContainer />}/>
+        <Route path="/item/:productId" element={<ItemDetailContainer/>}/>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   )
 }
 

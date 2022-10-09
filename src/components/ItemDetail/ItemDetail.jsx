@@ -1,4 +1,4 @@
-import "../../index.css";
+import ItemCount from "../ItemCount/ItemCount"
 
 const Item = ({data:{id,title,price,description,pictureUrl}}) => {
     return (
@@ -9,6 +9,7 @@ const Item = ({data:{id,title,price,description,pictureUrl}}) => {
                 <h6 className="item-detail--id"> {id} </h6>
                 <p className="item-detail--description">{description}</p>
                 <p className="item-detail--price" >${price}</p>
+                <ItemCount onAdd={() => {console.log("running function onAdd")}}/>
             </div>
         </div>
     )

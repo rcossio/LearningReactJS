@@ -1,4 +1,3 @@
-import "../../index.css";
 import Logo from "../Logo/Logo.jsx";
 import NavBar from "../NavBar/NavBar.jsx"
 

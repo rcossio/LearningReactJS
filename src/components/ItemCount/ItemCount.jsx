@@ -1,7 +1,6 @@
-import '../../index.css';
 import { useState } from 'react';
 
-const Counter = ({stock=99,onAdd}) => {
+const ItemCount = ({stock=99,onAdd}) => {
     const [counter,setCounter] = useState(0);
 
     const plus = () => {
@@ -30,4 +29,4 @@ const Counter = ({stock=99,onAdd}) => {
 
 };
 
-export default Counter;
+export default ItemCount;

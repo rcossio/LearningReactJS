@@ -1,4 +1,4 @@
-import "../../index.css";
+import {Link} from "react-router-dom";
 
 const Item = ({data:{id,title,price,description,pictureUrl}}) => {
     return (
@@ -8,6 +8,9 @@ const Item = ({data:{id,title,price,description,pictureUrl}}) => {
             <h6 className="item--id"> {id} </h6>
             <p className="item--description">{description}</p>
             <p className="item--price" >${price}</p>
+            <Link to={"/item/"+String(id)}>
+                <button className="item--button">Más información</button>
+            </Link>
         </div>
     )
 };

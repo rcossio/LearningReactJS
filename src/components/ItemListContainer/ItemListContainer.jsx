@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import "../../index.css";
 import ItemList from "../ItemList/ItemList.jsx"
 import getProducts from "../../backendMock.js";
-
+import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = () => {
+
+    let {categoryName} = useParams();
 
     let [products,setProducts] = useState([]);
     let [loading,setLoading] = useState(true);
@@ -26,7 +27,7 @@ const ItemListContainer = () => {
         <div className="item-list-container">
             {loading? 
             <h2 className="loading-sign">Loading products...</h2>
-            :<ItemList list={products}/>}
+            :<ItemList list={products.filter( (x) => (categoryName? x.category_id === categoryName: true))}/>}
         </div>
     )
 }

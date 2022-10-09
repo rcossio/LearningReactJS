@@ -1,12 +1,14 @@
-import "../../index.css";
 import { useEffect, useState } from "react";
 import getProducts from "../../backendMock.js";
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = ({id}) => {
+const ItemDetailContainer = () => {
+    let {productId} = useParams();
+
     let [product,setProduct] = useState([])
     let [loading,setLoading] = useState(true)
-    let [itemId,setItemId] = useState(id)
+    let [itemId,setItemId] = useState(productId)
 
     useEffect(
         () => {
@@ -26,7 +28,7 @@ const ItemDetailContainer = ({id}) => {
     return (
         <div>
             {loading? 
-            null
+            <h2 className="loading-sign">Good choice! Loading all the details...</h2>
             : <ItemDetail data={product}/>}
         </div>
     )
