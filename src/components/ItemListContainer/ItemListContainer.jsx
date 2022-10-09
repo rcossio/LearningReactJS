@@ -21,7 +21,7 @@ const ItemListContainer = () => {
                 }
             )
         },
-        [])
+        [categoryName])
 
     return(
         <div className="item-list-container">

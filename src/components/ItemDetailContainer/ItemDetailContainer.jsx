@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
     let [product,setProduct] = useState([])
     let [loading,setLoading] = useState(true)
     let [itemId,setItemId] = useState(productId)
-
+    
     useEffect(
         () => {
             getProducts().then(
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
                 }
             )
         },
-        []
+        [itemId]
     )
 
     return (
