@@ -1,13 +1,18 @@
 import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const Item = ({data:{id,title,price,description,pictureUrl}}) => {
 
-    let [totalUnits,setTotalUnits] = useState(0); 
+    let [totalUnits,setTotalUnits] = useState(0);  /* Esta linea no se usa mas pero fue pedida en un desafio */
+
+    const {addItem} = useContext(CartContext)
 
     const onAddFunction = (units) => {
-        setTotalUnits(totalUnits+units);
+        setTotalUnits(totalUnits+units); /* Esta linea no se usa mas pero fue pedida en un desafio */
+        addItem({id,title,price,description,pictureUrl},units)
     }
 
     return (

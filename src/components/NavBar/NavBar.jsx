@@ -13,7 +13,9 @@ const NavBar = () => {
                 <Link className="navbar-list-item" to="/category/MLA392282">Mates</Link>
                 <Link className="navbar-list-item" to="/category/MLA433029">Otros</Link>
             </ul>
-            <CartWidget/>
+            <Link to="/cart">
+                <CartWidget/>
+            </Link>
         </div>
     </nav>
     )

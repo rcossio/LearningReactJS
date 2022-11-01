@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const ItemCount = ({stock=99,onAdd}) => {
-    const [counter,setCounter] = useState(0);
+    const [counter,setCounter] = useState(1);
 
     const plus = () => {
         if (counter < stock) {
