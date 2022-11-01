@@ -7645,7 +7645,7 @@ const getProducts = () => {
 
     let products = query.results.map( (product) => new Product(product))
     
-    setTimeout(()=>{resolve(products)}, 2000)
+    setTimeout(()=>{resolve(products)}, 10)
     
     }
     )
