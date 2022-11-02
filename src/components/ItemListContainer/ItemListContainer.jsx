@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList.jsx"
-import getProducts from "../../backendMock.js";
 import { useParams } from "react-router-dom";
-
+import {collection,getDocs,query,where} from "firebase/firestore";
+import {db} from "../../services/firebaseConfig";
 
 const ItemListContainer = () => {
 
@@ -14,8 +14,18 @@ const ItemListContainer = () => {
 
     useEffect(
         () => {
-            getProducts().then(
-                (products) => {
+            const productsCollection = categoryName
+                ? query(collection(db,'products'),where("category_id","==",categoryName))
+                : collection(db,'products')
+
+            getDocs(productsCollection).then(
+                (response) => {
+                    let products = response.docs.map( (item) => {
+                        return {
+                            id: item.id,
+                            ...item.data()
+                        }
+                    })
                     setProducts(products)
                     setLoading(false)
                 }
@@ -27,7 +37,7 @@ const ItemListContainer = () => {
         <div className="item-list-container">
             {loading? 
             <h2 className="loading-sign">Loading products...</h2>
-            :<ItemList list={products.filter( (x) => (categoryName? x.category_id === categoryName: true))}/>}
+            :<ItemList list={products}/>}
         </div>
     )
 }

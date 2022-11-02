@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import getProducts from "../../backendMock.js";
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
 import { useParams } from "react-router-dom";
+import {collection,getDoc,doc} from "firebase/firestore";
+import {db} from "../../services/firebaseConfig";
 
 const ItemDetailContainer = () => {
     let {productId} = useParams();
@@ -12,12 +13,15 @@ const ItemDetailContainer = () => {
     
     useEffect(
         () => {
-            getProducts().then(
-                (products) => { 
-                    setProduct(products.find(
-                        (x) => x.id === itemId
-                        )
-                    ) 
+            const productsCollection = collection(db,'products');
+            let productReference = doc(productsCollection,itemId)
+            getDoc(productReference).then(
+                (item) => {
+                    setProduct({
+                            id: item.id,
+                            ...item.data()
+                        }
+                    )
                     setLoading(false)
                 }
             )

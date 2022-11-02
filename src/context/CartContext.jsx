@@ -9,14 +9,14 @@ const Provider = ({children}) => {
     let [cart, setCart] = useState([])
 
     let isInCart = (product) => {
-        let boolean = cart.map( (it) => it.id == product.id);
+        let boolean = cart.map( (it) => it.id === product.id);
         return boolean.includes(true)
     };
 
     let addItem = (product,quantity) => {
         if (isInCart(product)) {
             let updatedCart = cart.map((it) => {
-                if (it.id == product.id) {
+                if (it.id === product.id) {
                     it.quantity += quantity
                 }
                 return it 
@@ -29,7 +29,7 @@ const Provider = ({children}) => {
     };
 
     let removeItem = (item) => { 
-        let updatedCart = cart.filter( it => !(it.id == item.id) )
+        let updatedCart = cart.filter( it => !(it.id === item.id) )
         setCart(updatedCart);
     };
 

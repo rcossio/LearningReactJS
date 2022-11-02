@@ -23,11 +23,15 @@ const Item = ({data:{id,title,price,description,pictureUrl}}) => {
                 <h6 className="item-detail--id"> {id} </h6>
                 <p className="item-detail--description">{description}</p>
                 <p className="item-detail--price" >${price}</p>
+                <ItemCount onAdd={onAddFunction}/>
                 {totalUnits !== 0
-                    ? <Link to="/cart">
-                        <button className="item--button">Ir al Carrito</button>
-                    </Link>
-                    : <ItemCount onAdd={onAddFunction}/>}
+                    ?
+                    <div className="go-to-cart-div">
+                        <Link to="/cart">
+                            <button className="item--button">Go to Cart</button>
+                        </Link>
+                    </div>
+                    : null }
             </div>
         </div>
     )

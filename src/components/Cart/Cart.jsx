@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
@@ -28,12 +27,24 @@ const Cart = () => {
             })}
             {
                 cart.length === 0
-                ? null
-                : <div>
+                ? <div className="centered-div"> 
+                    <p className="empty-cart-message">Hey! This is your cart. Ready to fill this list?</p>
+                    </div>
+                : <div className="centered-div">
+                    <Link to='/checkout'>
+                        <button className="buy--button"> Purchase Items </button>
+                    </Link>
                     <button onClick={clear} className="cart--clear-btn">Clear Cart</button>                
                 </div>
             }
-
+            <div className="centered-div">
+                <div className="little-message">
+                    <p>Still hungry for apples?</p>
+                </div>
+                <Link to='/'>
+                    <button className="item--button"> Find more products </button>
+                </Link>
+            </div>
         </div>
     )
 }

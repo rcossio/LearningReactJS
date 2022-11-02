@@ -2,6 +2,7 @@ import Item from "../Item/Item.jsx"
 
 
 const ItemList = ({list}) => {
+    console.log(list)
     return (
         <div className="item-list">
             {list.map(item => 
