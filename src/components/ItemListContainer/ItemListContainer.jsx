@@ -18,7 +18,8 @@ const ItemListContainer = () => {
                 ? query(collection(db,'products'),where("category_id","==",categoryName))
                 : collection(db,'products')
 
-            getDocs(productsCollection).then(
+            getDocs(productsCollection)
+            .then(
                 (response) => {
                     let products = response.docs.map( (item) => {
                         return {
@@ -30,6 +31,7 @@ const ItemListContainer = () => {
                     setLoading(false)
                 }
             )
+            .catch( (error) => console.log(error) )
         },
         [categoryName])
 

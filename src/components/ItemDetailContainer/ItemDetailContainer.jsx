@@ -15,7 +15,8 @@ const ItemDetailContainer = () => {
         () => {
             const productsCollection = collection(db,'products');
             let productReference = doc(productsCollection,itemId)
-            getDoc(productReference).then(
+            getDoc(productReference)
+            .then(
                 (item) => {
                     setProduct({
                             id: item.id,
@@ -25,6 +26,7 @@ const ItemDetailContainer = () => {
                     setLoading(false)
                 }
             )
+            .catch( (error) => console.log(error) )
         },
         [itemId]
     )
