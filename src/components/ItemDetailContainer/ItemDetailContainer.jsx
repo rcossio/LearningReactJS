@@ -9,7 +9,8 @@ const ItemDetailContainer = () => {
 
     let [product,setProduct] = useState([])
     let [loading,setLoading] = useState(true)
-    let [itemId,setItemId] = useState(productId)
+    let [itemId,setItemId] = useState()
+    setItemId(productId)
     
     useEffect(
         () => {

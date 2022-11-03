@@ -19,9 +19,7 @@ const NavBar = () => {
                 }
             })
             setCategories( fetchedCategories )
-            console.log(categories)
-        }
-        )
+        })
         .catch ( (error) => console.log(error) )
     },[])
 
@@ -32,7 +30,7 @@ const NavBar = () => {
         </Link>
         <div className="navbar-body">
             <ul className="navbar-list">
-                {!(categories.length == 0) && categories.map( (category) => (
+                {!(categories.length === 0) && categories.map( (category) => (
                     <Link className="navbar-list-item" key={`${category.id}`} to={`/category/${category.id}`}>{category.cat_title}</Link>
                 ) )
                 }
