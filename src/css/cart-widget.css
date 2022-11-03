@@ -1,0 +1,28 @@
+.cartwidget-container {
+    position: relative;    
+}
+
+.cartwidget-img {
+    width: 2rem;
+    margin: 0.5rem;
+}
+
+.cartwidget-counter-container {
+    width: 1rem;
+    height: 1rem;
+    padding: 1px;
+    position: absolute;
+    background-color: var(--color-warning);
+    top: -29pt;
+    right: 10pt;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50%;
+}
+.cartwidget-counter{
+    font-weight: 600;
+    font-size: small;
+    color: var(--color-white);
+}

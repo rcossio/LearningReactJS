@@ -1,0 +1,91 @@
+.detail-card {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+    align-items: center;
+    width: 80vw;
+    box-shadow: 0px 0px 10px var(--color-darkgray);
+    padding: 30px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+.detail-card--data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 18rem;
+    margin: 0 0 0 2rem;
+}
+
+.detail-card--picture {
+    height: 18rem;
+}
+
+.detail-card--title {
+    margin: 5px;
+    font-size: xx-large;
+}
+
+.detail-card--description{
+    font-size: larger;
+}
+
+.detail-card--price{
+    margin: 5px;
+    font-size: x-large;
+}
+
+.detail-card--id {
+    color: var(--color-lightgray);
+    font-size: larger;
+}
+
+
+.cart-counter-div {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cart-counter--button {
+    width: 7rem;
+    height: calc(1.5rem + 6px) ;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    border: 0;
+    margin-left: 5px;
+    transition-duration:0.2s ;
+}
+
+.cart-counter--button:hover {
+    transition-duration:0.1s ;
+    box-shadow: 1px 1px 4px var(--color-primary--darker);
+}
+
+.cart-counter {
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid var(--color-lightgray);
+}
+
+.cart-counter--number {
+    width: 3rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-counter--side-button {
+    width: 2rem;
+    height: 1.5rem;
+    border-radius: 10%;
+    background-color: var(--color-primary);
+    border: 0;
+}

@@ -34,7 +34,9 @@ const Provider = ({children}) => {
 
     let clear = () => { setCart([]) };
 
-    let cartFunctions = {isInCart,addItem,removeItem,clear}
+    let totalPrice = () => cart.reduce((ac,it) => ac + it.quantity*it.price,0)
+
+    let cartFunctions = {isInCart,addItem,removeItem,clear,totalPrice}
 
  
     return (

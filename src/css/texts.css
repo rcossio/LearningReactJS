@@ -1,0 +1,26 @@
+/* Text classes */
+.warning-text{
+    color: var(--color-warning);
+    font-size: small;
+}
+
+.loud-text  {
+    text-align: center;
+    color:var(--color-black); 
+    font-weight: 600;
+    font-size: larger;
+    margin: 20px 0;
+}
+
+.quiet-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quiet-text {
+    text-align: center;
+    font-size: small;
+    color: var(--color-darkgray);
+    margin: 10px;
+}

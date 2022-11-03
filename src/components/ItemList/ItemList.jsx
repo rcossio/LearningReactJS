@@ -3,9 +3,9 @@ import Item from "../Item/Item.jsx"
 
 const ItemList = ({list}) => {
     return (
-        <div className="item-list">
+        <div className="item-list-div">
             {list.map(item => 
-            <li className="item-list-li" key={item.id}>
+            <li key={item.id}>
                 <Item data={item}/>
             </li>
             )}

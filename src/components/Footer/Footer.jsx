@@ -2,7 +2,7 @@
 const Footer = () => {
     return(
         <div className="footer-div">
-            <p className="copyright">2022, Rodrigo Cossio Pérez. All rights Reserved</p>
+            <p className="quiet-text">2022, Rodrigo Cossio Pérez. All rights Reserved</p>
         </div>
     )
 }

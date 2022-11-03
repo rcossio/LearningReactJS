@@ -1,5 +1,5 @@
-import Logo from "../Logo/Logo.jsx";
-import NavBar from "../NavBar/NavBar.jsx"
+import Logo from "./Logo.jsx";
+import NavBar from "../Header/NavBar.jsx"
 
 const Header = () => {
     return (

@@ -10,19 +10,19 @@ const ItemCount = ({stock=99,onAdd}) => {
     };
 
     const minus = () => {
-        if (counter > 0) {
+        if (counter > 1) {
             setCounter(counter-1);
         }
     };
 
     return (
-        <div className="item-counter-w-button">
-            <div className="item-counter">
-                <button className="item-counter--button" onClick={minus}>-</button>
-                <div className="item-counter--number"> {counter}</div>
-                <button className="item-counter--button" onClick={plus}>+</button>
+        <div className="cart-counter-div">
+            <div className="cart-counter">
+                <button className="cart-counter--side-button" onClick={minus}>-</button>
+                <div className="cart-counter--number"> {counter}</div>
+                <button className="cart-counter--side-button" onClick={plus}>+</button>
             </div>
-            <button className="item-counter-w-button--addToCartButton" onClick={()=> {onAdd(counter)}}>Add to cart</button>
+            <button className="cart-counter--button" onClick={()=> {onAdd(counter)}}>Add to cart</button>
         </div>
 
     )

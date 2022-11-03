@@ -37,9 +37,9 @@ const ItemListContainer = () => {
         [categoryName])
 
     return(
-        <div className="item-list-container">
+        <div>
             {loading? 
-            <h2 className="loading-sign">Loading products...</h2>
+            <h2 className="loud-text">Loading products...</h2>
             :<ItemList list={products}/>}
         </div>
     )
