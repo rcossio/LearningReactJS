@@ -14,6 +14,7 @@ const ItemListContainer = () => {
 
     useEffect(
         () => {
+            setLoading(true)
             const productsCollection = categoryName
                 ? query(collection(db,'products'),where("category_id","==",categoryName))
                 : collection(db,'products')

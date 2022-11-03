@@ -1,6 +1,6 @@
-# Fake Store 
+# Tienda virtual - Fake Store 
 
-Este proyecto fue realizado en el marco de l curso de ReactJS desarrollado en CoderHouse. El mismo consiste en realizar una tienda virtual sencilla. El código está subido en el repositorio de GitHub https://github.com/rcossio/LearningReactJS.git y montado en un servidor de Netlify https://learning-react-coderhouse-rcossio.netlify.app/
+Este proyecto fue realizado en el marco del curso de ReactJS ofrecido por CoderHouse. El mismo consiste en realizar una tienda virtual sencilla. El código está subido en el repositorio de GitHub https://github.com/rcossio/LearningReactJS.git y montado en un servidor de Netlify https://learning-react-coderhouse-rcossio.netlify.app/.
 
 ## Paquetes específicos utilizados
 - React-router-DOM
@@ -17,10 +17,13 @@ Este proyecto fue realizado en el marco de l curso de ReactJS desarrollado en Co
 ## ¿Cómo replicar este proyecto localmente? 
 
 1. Clonar el repositorio en una carpeta local
+
 `git clone https://github.com/rcossio/LearningReactJS.git`
 
 2. Instalar las dependencias del proyecto
+
 `npm i`
 
 3. Iniciar el proyecto localmente
+
 `npm start`

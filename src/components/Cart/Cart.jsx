@@ -32,7 +32,7 @@ const Cart = () => {
                     </div>
                 : <div className="centered-div">
                     <Link to='/checkout'>
-                        <button className="buy--button"> Purchase Items </button>
+                        <button className="buy-button"> Purchase Items </button>
                     </Link>
                     <button onClick={clear} className="cart--clear-btn">Clear Cart</button>                
                 </div>

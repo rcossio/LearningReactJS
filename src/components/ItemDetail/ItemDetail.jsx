@@ -6,12 +6,12 @@ import { CartContext } from "../../context/CartContext";
 
 const Item = ({data:{id,title,price,description,pictureUrl}}) => {
 
-    let [totalUnits,setTotalUnits] = useState(0);  /* Esta linea no se usa mas pero fue pedida en un desafio */
+    let [totalUnits,setTotalUnits] = useState(0);  
 
     const {addItem} = useContext(CartContext)
 
     const onAddFunction = (units) => {
-        setTotalUnits(totalUnits+units); /* Esta linea no se usa mas pero fue pedida en un desafio */
+        setTotalUnits(totalUnits+units);
         addItem({id,title,price,description,pictureUrl},units)
     }
 

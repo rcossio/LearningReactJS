@@ -9,13 +9,11 @@ const ItemDetailContainer = () => {
 
     let [product,setProduct] = useState([])
     let [loading,setLoading] = useState(true)
-    let [itemId,setItemId] = useState()
-    setItemId(productId)
-    
+
     useEffect(
         () => {
             const productsCollection = collection(db,'products');
-            let productReference = doc(productsCollection,itemId)
+            let productReference = doc(productsCollection,productId)
             getDoc(productReference)
             .then(
                 (item) => {
@@ -28,8 +26,7 @@ const ItemDetailContainer = () => {
                 }
             )
             .catch( (error) => console.log(error) )
-        },
-        [itemId]
+        }
     )
 
     return (
