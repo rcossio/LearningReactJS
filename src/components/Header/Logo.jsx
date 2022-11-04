@@ -5,7 +5,7 @@ const Logo = () => {
     return (
         <picture>
             <Link to="/">
-                <img className="logo" alt='Logo' src={logo} />
+                <img className="small-image" alt='Logo' src={logo} />
             </Link>
         </picture>
     )

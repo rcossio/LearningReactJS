@@ -10,9 +10,9 @@ const Cart = () => {
         <div className="flextable">
             <div className="flextable-row flextable-header">
                 <p className="flextable-row--cell"> ID </p>
-                <p className="flextable-row--cell-lg"> Titulo </p>
-                <p className="flextable-row--cell-sm"> Precio</p>
-                <p className="flextable-row--cell-sm"> Cantidad</p>
+                <p className="flextable-row--cell-lg"> Product </p>
+                <p className="flextable-row--cell-sm"> Price</p>
+                <p className="flextable-row--cell-sm"> Quantity</p>
             </div>
             {cart.map( (item) => {
                 return (

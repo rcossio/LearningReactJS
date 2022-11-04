@@ -1,6 +1,9 @@
 import { useContext,useState } from "react";
 import { CartContext } from "../../context/CartContext";
-import { serverTimestamp } from "firebase/firestore";
+import { serverTimestamp, collection, addDoc } from "firebase/firestore";
+import {db} from "../../services/firebaseConfig";
+import UserData from "./UserData"
+import OrderReport from "./OrderReport";
 
 const Checkout = () => {
 
@@ -9,17 +12,10 @@ const Checkout = () => {
     let [email, setEmail] = useState("");
     let [email2, setEmail2] = useState("");
     let [errorMessages,setErrorMessages] = useState({name:'', phone:'', email:''});
+    let [orderId,setOrderId] = useState ('');
+    let [loading,setLoading] = useState(false);
 
-
-    let {cart,totalPrice} = useContext(CartContext)
-
-    let handleName = (e) => { setName(e.target.value) }
-
-    let handlePhone = (e) => { setPhone(e.target.value) }
-
-    let handleEmail = (e) => { setEmail(e.target.value) }
-    let handleEmail2 = (e) => { setEmail2(e.target.value) }
-
+    let {cart,totalPrice,clear} = useContext(CartContext)
 
     let checkErrors = () => {
         let nameError = '';
@@ -51,6 +47,7 @@ const Checkout = () => {
 
 
     let handleOrder = () => {
+        setLoading(true);
         let [errorFlag,errors] = checkErrors ()
 
         if (errorFlag) {
@@ -63,32 +60,36 @@ const Checkout = () => {
                 date: serverTimestamp(),
                 total: totalPrice(cart),
             };
-            console.log(order)
+
+            const orderCollection = collection(db,'orders');
+            addDoc(orderCollection,order)
+            .then( (response) => {
+                setOrderId(response.id)
+                console.log(response.id)
+                setLoading(false);
+                clear(cart);
+            })
+            .catch( (error) => {console.log(error)})
         }
     };
+
+    let handler = {
+        name: (e) => { setName(e.target.value) },
+        phone:(e) => { setPhone(e.target.value) },
+        email: (e) => { setEmail(e.target.value) },
+        email2: (e) => { setEmail2(e.target.value) },
+        order: handleOrder,
+    }
 
 
     return (
         <div>
-            <div className="form-container">
-                <div className="form-title">Full Name:</div>
-                {errorMessages.name && (<p className="warning-text">{errorMessages.name}</p>)}
-                <input onBlur={handleName} type={"text"} className="form-input" placeholder="Name"></input>
-
-                <div className="form-title">Telephone:</div>
-                {errorMessages.phone && (<p className="warning-text">{errorMessages.phone}</p>)}
-                <input onBlur={handlePhone} type={"number"} className="form-input" placeholder="Phone"></input>
-
-                <div className="form-title">e-mail</div>
-                {errorMessages.email && (<p className="warning-text">{errorMessages.email}</p>)}
-                <input onBlur={handleEmail} type={"email"} className="form-input" placeholder="its-a-me@sample.com"></input>
-
-                <div className="form-title">Write your e-mail again</div>
-                {errorMessages.email && (<p className="warning-text">{errorMessages.email}</p>)}
-                <input onBlur={handleEmail2} type={"email"} className="form-input" placeholder="its-a-me@sample.com"></input>
-
-                {!(cart.length === 0) && (<button className="striking-button" onClick={handleOrder}>Order!</button>)}
-            </div>
+            {loading
+            ? <h2 className="loud-text"> Processing your order...</h2>
+            : (orderId === '')
+                ? <UserData errorMessages={errorMessages} handler={handler}/>
+                : <OrderReport orderId={orderId}/>
+            }
         </div>
     )
 }
