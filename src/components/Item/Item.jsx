@@ -5,7 +5,7 @@ const Item = ({data:{id,title,price,description,pictureUrl}}) => {
         <div className="vcard">
             <img className="vcard--picture" src={pictureUrl} alt="A product" />
             <h5 className="vcard--title"> {title} </h5>
-            <h6 className="vcard--id"> {id} </h6>
+            <h6 className="vcard--id"> ID:{id} </h6>
             <p className="vcard--description">{description}</p>
             <p className="vcard--price" >${price}</p>
             <Link to={"/item/"+String(id)}>

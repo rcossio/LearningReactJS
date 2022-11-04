@@ -16,3 +16,13 @@
     border-radius: 10pt;
     border: 1pt solid var(--color-lightgray) ;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield; 
+}

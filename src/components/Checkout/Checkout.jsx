@@ -47,13 +47,13 @@ const Checkout = () => {
 
 
     let handleOrder = () => {
-        setLoading(true);
         let [errorFlag,errors] = checkErrors ()
 
         if (errorFlag) {
             setErrorMessages(errors)
         } else {
             setErrorMessages({name:'', phone:'', email:''})
+            setLoading(true);
             const order = {
                 buyer: {name,phone,email},
                 items: cart,
@@ -65,7 +65,6 @@ const Checkout = () => {
             addDoc(orderCollection,order)
             .then( (response) => {
                 setOrderId(response.id)
-                console.log(response.id)
                 setLoading(false);
                 clear(cart);
             })
